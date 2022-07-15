@@ -99,16 +99,16 @@
         <header>
           <h1>Mirror Racer</h1>
           <em><a href="https://js1024.fun/demos/2022/22">2022 JS1024 Entry</a> &ndash; <a
-              href="https://github.com/andrewb/mirror-racer/blob/main/min.js">1017 bytes</a></em>
+              href="https://github.com/andrewb/mirror-racer/blob/main/min.js">1019 bytes</a></em>
         </header>
         <section>
           <canvas id="canvas"></canvas>
         </section>
         <section>
-          <p>Make the white player win by leaving the blue opponent behind! Green cells will boost while red will slow you to a crawl. The blue player will mirror your moves!</p>
-          <p>Each course is unique. Some are harder than others, so try a few times.</p>
           <p><strong>Mobile:</strong> Tap on the left and right of the canvas to move.</p>
           <p><strong>Desktop:</strong> <span class="keymap">Use <kbd class="key">Left Arrow</kbd> and <kbd class="key">Right Arrow</kbd> to move.</span></p>
+          <p>Make the white player win by leaving the blue opponent behind! Green cells will boost while red will slow you to a crawl. The blue player will mirror your moves!</p>
+          <p>Each course is unique. Some are harder than others, so try a few times.</p>
           <p><small><a href="https://github.com/andrewb">Andrew Berry</a></small></p>
         </section>
       </div>
@@ -129,6 +129,12 @@
           // Stop space from scrolling the page
           e.preventDefault();
         }
+      });
+    </script>
+    <script>
+      a.addEventListener('pointerdown', e => {
+        // Stop pointer event from selecting canvas or text
+        e.preventDefault();
       });
     </script>
     <script src="min.js"></script>

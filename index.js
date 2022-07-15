@@ -1,4 +1,3 @@
-// eb3106cb4c8df1dad21b69aa62eee7cc24d402bfd9f759c273d4799c11ef075b
 // z = seed
 z = new Date % 256
 // p = player x
@@ -269,7 +268,7 @@ T(t = 0)
 
 // Events
 // Mouse and touch
-onpointerdown = (i, j, k) => o = i.offsetX < 300 ? 37 : 39
+a.onpointerdown = (i, j, k) => o = i.offsetX < 300 ? 37 : 39
 // Keyboard
 // `which` is deprecated, but it's shorter than using `code` which
 // returns readable key names.
