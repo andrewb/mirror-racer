@@ -1,0 +1,17 @@
+{
+  "name": "js1024-2022",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "ugly": "uglifyjs index.js -o ugly.js",
+    "pack": "regpack ugly.js > min.js",
+    "build": "yarn run ugly && yarn run pack"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "regpack": "^5.0.1",
+    "uglify-es": "^3.3.9"
+  }
+}

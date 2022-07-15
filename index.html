@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="author" content="Andrew Berry" />
+    <meta name="description" content="JS1024 2022: &quot;Mirror Racer&quot; -- Beat the blue player!" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <link rel="canonical" href="https://mock.xyz/mirror-racer/" />
+    <meta property="og:title" content="Mirror Racer - JS1024 2022" />
+    <meta property="og:description" content="JS1024 2022: &quot;Mirror Racer&quot; -- Beat the blue player" />
+    <meta property="og:image" content="https://mock.xyz/mirror-racer/thumbnail.png" />
+    <meta property="og:url" content="https://mock.xyz/mirror-racer/" />
+    <title>Mirror Racer - JS1024 2022</title>
+    <style>
+      body,
+      html {
+        margin: 0;
+        padding: 0;
+        font-family: "Helvetica", "Arial", sans-serif;
+        text-align: center;
+      }
+
+      a,
+      a:visited {
+        color: #00f;
+        text-decoration: none;
+      }
+
+      a:hover {
+        color: #000;
+      }
+
+      main {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      header {
+        margin-bottom: 1em;
+      }
+
+      em {
+        color: #666;
+        font-size: 0.8em;
+      }
+
+      kbd {
+        padding: 5px;
+        font-family: "Menlo", "Courier New", monospace;
+        font-size: 0.8em;
+        display: inline-block;
+        min-width: 1em;
+        background: #ddd;
+        border-bottom: 2px solid #ccc;
+        vertical-align: middle;
+      }
+
+      .touch-bar {
+        position: fixed;
+        bottom: 1.5rem;
+        width: 100%;
+      }
+
+      .touch-bar-wrap {
+        padding: 0.5rem;
+        display: flex;
+        justify-content: space-between;
+      }
+
+      .touch-button {
+        width: 8rem;
+        height: 5rem;
+        background: rgba(0, 0, 0, 0.2);
+        color: #fff;
+        font-size: 1.5rem;
+        line-height: 5rem;
+        border-radius: 2.5rem;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+      }
+
+      .arrow-up {
+        width: 0;
+        height: 0;
+        border-left: 8px solid transparent;
+        border-right: 8px solid transparent;
+        border-bottom: 16px solid #fff;
+        pointer-events: none;
+      }
+    </style>
+  </head>
+
+  <body>
+    <main>
+      <div>
+        <header>
+          <h1>Mirror Racer</h1>
+          <em><a href="https://js1024.fun/demos/2022/22">2022 JS1024 Entry</a> &ndash; <a
+              href="https://github.com/andrewb/mirror-racer/blob/main/min.js">1017 bytes</a></em>
+        </header>
+        <section>
+          <canvas id="canvas"></canvas>
+        </section>
+        <section>
+          <p>Make the white player win by leaving the blue opponent behind! Green cells will boost while red will slow you to a crawl. The blue player will mirror your moves!</p>
+          <p>Each course is unique. Some are harder than others, so try a few times.</p>
+          <p><strong>Mobile:</strong> Tap on the left and right of the canvas to move.</p>
+          <p><strong>Desktop:</strong> <span class="keymap">Use <kbd class="key">Left Arrow</kbd> and <kbd class="key">Right Arrow</kbd> to move.</span></p>
+          <p><small><a href="https://github.com/andrewb">Andrew Berry</a></small></p>
+        </section>
+      </div>
+    </main>
+    <script>
+      // Approx. JS1024 shim
+      let canvas = document.getElementById('canvas');
+      let ctx = canvas.getContext('2d');
+      window.a = canvas;
+      window.b = document.body;
+      window.c = ctx;
+      window.d = document;
+      a.width = innerWidth; a.height = innerHeight;
+    </script>
+    <script>
+      window.addEventListener('keydown', e => {
+        if (e.which === 32) {
+          // Stop space from scrolling the page
+          e.preventDefault();
+        }
+      });
+    </script>
+    <script src="min.js"></script>
+  </body>
+</html>
